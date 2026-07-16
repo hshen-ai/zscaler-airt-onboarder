@@ -28,7 +28,7 @@ To execute the deployment and testing scripts, the local machine must have:
 
 ### Install globally under your user account:
 ```bash
-gemini skills install https://github.com/your-username/zscaler-airt-onboarder.git
+gemini skills install https://github.com/hshen-ai/zscaler-airt-onboarder.git
 ```
 
 ### Enable the skill in your active session:
@@ -38,7 +38,22 @@ gemini skills install https://github.com/your-username/zscaler-airt-onboarder.gi
 
 ---
 
-## 🔑 Operational Flow
+## 🤖 How to Use with Gemini CLI (Post-Installation)
+
+Once installed and reloaded via `/skills reload`, this skill teaches Gemini CLI exactly how to deploy brokers, test connections, and onboard targets. You do not need to run the Python scripts manually—you can ask Gemini CLI to orchestrate the workflow for you using natural language!
+
+### 🗣️ Example Prompts to Trigger the Agent:
+*   *"Help me deploy a red teaming broker over SSH to 192.168.1.50"*
+*   *"Test my red teaming connection to https://chatbot.local/chat using broker <BROKER_UUID>"*
+*   *"Onboard my local chatbot to Zscaler under business unit <BU_UUID>"*
+
+The agent will automatically activate this skill, locate the bundled scripts (`scripts/deploy_broker.py`, `scripts/test_connection.py`, etc.), prompt you securely for any missing parameters, and execute the underlying steps safely on your behalf.
+
+---
+
+## 🔑 Operational Flow (Manual Command Syntax)
+
+If you prefer to run the scripts manually, utilize the parameter syntax below:
 
 ### Phase 1: Set Zscaler ZIdentity Credentials
 ```bash
