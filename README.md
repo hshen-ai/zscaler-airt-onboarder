@@ -38,16 +38,24 @@ gemini skills install https://github.com/hshen-ai/zscaler-airt-onboarder.git
 
 ---
 
-## 🤖 How to Use with Gemini CLI (Post-Installation)
+## 🤖 Multi-Agent Compatibility (Gemini CLI, Claude Code, Cursor, Copilot)
 
-Once installed and reloaded via `/skills reload`, this skill teaches Gemini CLI exactly how to deploy brokers, test connections, and onboard targets. You do not need to run the Python scripts manually—you can ask Gemini CLI to orchestrate the workflow for you using natural language!
+While this skill was natively designed, packaged, and tested on **Gemini CLI**, its modular and self-contained structure (comprising standard Markdown instructions and parameter-driven Python scripts) makes it highly compatible with other leading agentic software engineering assistants:
 
-### 🗣️ Example Prompts to Trigger the Agent:
-*   *"Help me deploy a red teaming broker over SSH to 192.168.1.50"*
-*   *"Test my red teaming connection to https://chatbot.local/chat using broker <BROKER_UUID>"*
-*   *"Onboard my local chatbot to Zscaler under business unit <BU_UUID>"*
+### 1. Gemini CLI (Native)
+*   **Workflow:** Installs globally using `gemini skills install` and triggers automatically via session slash commands or natural language.
+*   **Sample Prompt:** *"Deploy a red teaming broker over SSH to 192.168.1.50 and test connection."*
 
-The agent will automatically activate this skill, locate the bundled scripts (`scripts/deploy_broker.py`, `scripts/test_connection.py`, etc.), prompt you securely for any missing parameters, and execute the underlying steps safely on your behalf.
+### 2. Claude Code (`claude` CLI)
+*   **Workflow:** Open `claude` in this project directory. Claude Code will natively read `SKILL.md`, consult the schemas in `references/api_reference.md`, and execute the corresponding Python helper scripts inside `scripts/` to orchestrate your broker and target onboarding.
+*   **Sample Prompt:** *"Claude, use the scripts/onboard_target.py script to register my local chatbot under BU <BU_UUID>."*
+
+### 3. Cursor AI (Composer) & VS Code Copilot (Agentic Workspaces)
+*   **Workflow:** Open this project in Cursor or VS Code. In your Composer / Chat panel (using `@Workspace` or codebase indexing), you can ask the agent to help you onboard. It will parse the API references and generate the exact shell commands to run in your integrated terminal.
+*   **Sample Prompt:** *"Check references/api_reference.md and generate the terminal command to test my broker connection."*
+
+### 4. Devin CLI
+*   **Workflow:** Fully compatible with Devin's autonomous shell. Devin can parse the operational manuals and execute the Python scripts sequentially to deploy brokers and verify targets.
 
 ---
 
