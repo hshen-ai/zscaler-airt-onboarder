@@ -1,7 +1,9 @@
 # Zscaler AI Red Teaming (AiRT) Onboarder Skill
 ===============================================
 
-An enterprise-grade, programmatic automation skill for the **Zscaler AI Red Teaming (AiRT)** platform. This skill enables engineers and AI agents to programmatically deploy brokers, execute diagnostic connectivity tests, and register active generative AI chatbot targets on the central plane.
+During the critical first engagement of a Proof of Value (POV) with a customer, manually tuning target connections—including provisioning, configuring, and onboarding secure local brokers—is a complex, friction-filled process that frequently takes hours of high-touch engineering time. 
+
+The **`zscaler-airt-onboarder`** skill is designed to solve this exact bottleneck. By packaging this procedural knowledge into an automated, reusable skill, coding agents (such as Gemini CLI, Claude Code, Cursor, and Devin) can execute remote broker deployments, perform real-time diagnostic connection testing, and officially register generative AI chatbot targets in seconds. This accelerates POV velocity, guarantees consistent, secure connection setups, and allows teams to test Red Teaming targets internally without any public internet exposure or firewall modifications.
 
 ---
 
